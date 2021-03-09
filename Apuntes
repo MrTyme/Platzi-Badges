@@ -1,0 +1,161 @@
+**React-Js:
+
+--Es tanto libreria/Biblioteca
+
+--Es declarativo.
+
+--maneja archivos Jsx (html dentro de Javascript);
+
+--importante que son los componentes(actuan como bloques de lego)
+
+
+////////////////////
+
+
+**Pre-requisitos:
+
+--editor de codigo,
+
+--instalar react dev toools:
+	comando: "npm i -g react-devtools"
+
+
+////////////////////
+
+
+**Creacion de la app en react
+
+--comando para la app:
+	npx create-react-app nombre-del-proyecto.
+
+
+Nota>> en nuestro caso (caso del curso de react)
+vamos, ha clonar un repositorio que ya existe en
+la pagina web, eh instalar las dependencias con npm i
+
+
+////////////////////
+
+
+**ReactDomRender:
+
+--a diferencia de document.createElement(),
+el cual recibe un argumento del elemento a crear
+y luego en donde lo queremos crear, y asi hasta 
+usar el appendChild que ejecuta dicho codigo.
+
+
+--En el caso de react ya no se require dicho codigo
+sino que ahora, se genera un import, que va a requerir
+dos librerias en si
+
+React y ReactDom
+
+*React-) va a ser el createElement de jsx,
+siempre que deseemos trabajar condigo HTML dentro de JS,
+debemos traer la libreria de react para ello.
+
+
+*ReactDom-) va a actuar como appendChild,
+el reactDom recibe dos argumentos,
+
+1ero-) que queremos renderizar(element)
+
+2do-) donde lo queremos renderizar(container)
+
+
+////////////////////
+
+
+**JSX:
+
+-- es la alternativa para React.createElement()
+las cuales poseen el mismo poder y capacidad.
+
+-- la diferencia es que es mas facil de escribirlo
+y leerlo.
+
+comparaciones:
+
+--React.createElement():
+	--recibe tres argumentos (elemento-a-crear, atributos o props, children(la carga de informacion)).
+	
+	--en caso de querer usar una variable, se usa las comillas
+	especiales `${}` con signo dolar y brakets.
+	
+	--pero React.createElement() solo manipula una etiqueta a la
+	vez y para manipular varios, se deben llamar create dentro
+	de otro.
+
+
+--JSX:
+	--recibe la etiqueta a manipular de forma directa como en html.
+	
+	--en el caso de variable, dentro de las etiquetas se establecen
+	unos braket que manipulan las variables, funciones o expresiones.
+	
+	--jsx puede ser un objeto o funcion que recibe dentro
+	una gran cantidad de etiquetas para manipular el html
+
+
+
+////////////////////
+
+
+**Que es un Componente?:
+
+
+
+
+
+////////////////////
+
+
+////////////////////
+
+////////////////////
+
+////////////////////
+////////////////////
+
+////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
