@@ -1,29 +1,36 @@
 import React, {Component} from 'react';
 
 
-//importacion de assets para el archivo
+//importacion de assets
 import ConfLogo from '../assets/badge-header.svg';
+
+//importacion de estilos
+import './styles/Badge.css';
 
 
 export default class Badge extends Component{ 
     render(){
         return (
-            <div>
-                <div>
+
+            <div className="Badge">
+
+                <div className="Badge__header">
                     <img src={ConfLogo} alt="Conf Logo" />
                 </div>
 
-                <div>
-                    <img src="" alt="Avatar" />
-                    <h1>Daniel <br/>Cordova </h1>
+                <div className="Badge__section-name">
+                    <img className="badge__avatar" src={this.props.Gravatar} alt="Avatar" />
+                    
+                    <h1>{ this.props.firstName } <br/>
+                        { this.props.lastName } </h1>
                 </div>
 
-                <div>
-                    <p>Asesor Inmobiliario </p>
-                    <p>@DCordova </p>
+                <div className="Badge__section-info">
+                    <h3>{this.props.jobTitle} </h3>
+                    <div>@{this.props.Twitter}</div>
                 </div>
             
-                <div>
+                <div className="Badge__footer">
                     #platziconf
                 </div>
             </div>
