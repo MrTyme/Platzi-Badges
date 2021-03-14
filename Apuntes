@@ -104,11 +104,95 @@ comparaciones:
 
 **Que es un Componente?:
 
+--son en si son los bloques de construccion
+que cuando juntas varios de ellos de forma
+organizada y logica, te terminan
+creando un website enorme.
+
+...........................
+
+**Que es un elemento?
+
+el Elemento es el objeto en si
+mientras que el componente es la Clase
+del objeto
+
+...........................
+
+Identificacion de elementos y componentes:
+
+Deben identificarce mediante estas preguntas
+
+--Que elementos se repiten?
+	R: Elementos en una lista O,
+	Elementos que comparten un aspecto visual mas funcionalidad
+	
+	--Cada elemento de la lista sale de un componente
+	
 
 
+--Que elementos cumplen una funcion especifica
+	R: Puede ser un elemento como el switch de DarkTheme
+	que a pesar de que se ve igual a otros botones,
+	cumplen con que actua de una manera distina.
+	
+	Actua de forma indenpendiente.
+
+...........................
+
+-Elementos de una funcion especifica:
+	En si son childrens para capturar
+	una funcion especifica
+
+
+...........................
+
+-Identificar componentes es MUY IMPORTANTE
+escencial para desarrollar apps en react
 
 
 ////////////////////
+
+**Como funciona un componente en React:
+
+--Montaje, primer paso del ciclo de vida
+de un componente.
+
+--actualizacion, siguiente paso
+despues de la creacion del componente,
+en donde se ejecuta el render(), esto genera
+el nuevo DOM y react nos envia la senial
+de confirmacion con el, componentDidUpdate().
+
+
+--eleminacion, es el paso siguiente cuando el usuario
+decide ejecutar otra accion en el codigo O desplazarce
+hacia otra pagina del website, esto ocurre ejecutando
+"componentWillUnmount()" en donde el codigo es
+eliminado del DOM. 
+
+...........................
+
+
+**Construccion del componente:
+	
+	//sintaxis
+	
+	=>Libreria de react
+	
+	export default class Badge extends Component{
+		render(){
+			return (
+				jsx
+			)
+		}
+	}
+	
+y se exporta, al importar 
+y no asignar los simbolos de etiquetas ya se denomina
+como un componente, pero en el ReactDom se debe definir
+el elemento, en este caso con auto cerrado <Elemento/> 
+
 
 
 ////////////////////
