@@ -13,6 +13,9 @@ import gravatar from '../assets/character_game.jpg';
 //importacion del badge
 import Badge from '../components/Badge';
 
+//componente de los formularios
+import BadgeForm from '../components/BadgeForm';
+
 export default class BadgeNew extends Component{
     render(){
         
@@ -34,11 +37,15 @@ export default class BadgeNew extends Component{
                                 jobTitle="Asesor de Bienes Raices"
                             />
                         </div>
+
+                        <div className="col-6">
+                            <BadgeForm />
+                        </div>
                     </div>
                 </div>
 
             </div>
-        )
+        );
 
     }
 }
