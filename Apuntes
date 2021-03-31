@@ -197,35 +197,245 @@ el elemento, en este caso con auto cerrado <Elemento/>
 
 ////////////////////
 
-////////////////////
+
+**Como aplicar estilos en react:
+
+1ero-) Primero crear una carpeta de styles
+dentro del component directory
+
+2do-) crear el archivo del componente con css
+
+3ero-) importar el archivo css al componente,
+el mismo se importa sin establecer una variable,
+esto es gracias a webpack en donde su formato
+esta programado para la lectura de archivos css
+
+4to-) asignar los ClassName requeridos 
+para llamar al css 
+
+5to-) instalar un framework de disenio
+para los estilos
+
+
+6to-) se pueden insertar estilos globales 
+al crear el documento en la carpeta src
+en donde manejamos, los estilos en general
+de todo el archivo
+
+
+
+Nota>> nuestra hoja de estilos se maneja 
+bajo la composicion BEM en donde El nombre 
+va en Mayusculas en los ClassName en relacion
+con el nombre del archivo de css
+
+
+
 
 ////////////////////
+
+
+**Props:
+
+--son argumentos a una funcion,
+en si los atributos de las etiquetas
+
+--los props nacen desde la variable "this.props"
+
+-- se llaman dentro de las llaves, y se invocan 
+en las llaves 
+
+<h1 className="Nombre_del_prop">
+
+invocacion del => {this.prop.nombre_del_prop}
+
+
 ////////////////////
 
+
+**Nuestra primera pagina:
+
+--Pagina: siguen siendo componente
+pero su diferencia es que
+
+la pagina es el componente padre
+que por dentro, posee a sus componentes
+hijos.
+
+
+construccion de nuestra pagina de la siguiente forma
+
+navbar
+
+hero
+
+body
+
+
+////////////////////
+
+
+**Enlazando Eventos:
+
+--React dispone de EVENTOS, en donde se 
+recibe la informacion a utilizar.
+
+los enlaces a eventos los crearemos
+usando unos formularios donde
+el usuario se podra ingresar a platzi conf.
+
+--invocacion de eventos:
+-En las etiquetas colocamos el atributo (onChange=""),
+que se encarga de capturar el estado de la aplicacion.
+
+onChange recibe una funcion llamada con this
+que se encarga de capturar un evento que realizmos
+para manipular el key-value del imput que lo manipula.
+
+existen varios tipos de eventos,
+y la lista es:
+
+-> onChange
+-> onClick
+-> onSubmit
+
+
+
+NOTA>> LA ETIQUETA BUTTON TIENE POR DEFECTO EL TYPO SUBMIT,
+EVENTO QUE REFRESCA LA PAGINA CUANDO EL BOTON ES OPRIMIDO,
+ahora se puede evitar si, se cambia el type O desde el evento
+onSubmit y la funcion va a recibir el "preventDefault"
+
+
+////////////////////
+
+
+**Manejo de estados:
+
+--El estado(state) permite que los componentes
+produzcan su propia informacion ademas de guardarla,
+ya sea para consumirla O para pasarla a componentes
+descendientes.
+
+--esta informacion va a pasar en una sola direccion.
+
+
+1ero-) inicializar el estado:
+--en cualquier linea de codigo, pero lo mejor
+es al inicio de la clase o en el constructor
+
+	state = {};
+.............................................................
+
+
+2do-) como manipular el estado??
+
+se utiliza la funcion de setState, que recibe un objeto
+con la informacion que se desea guardar.
+
+this.setState({ 
+	[e.target.name]: e.target.value
+});
+
+
+-el name esta en un array que guardara en forma de lista
+todos los datos que se reciban en el state, pero dependiendo
+de en que DIV se encuentre
+(en que sector del codigo esta recibiendo la informacion).
+
+.............................................................
+
+3ero-) Lectura del estado
+--se hace usando el prop value dentro de la etiqueta
+que manipule el state
+
+<input name="valor" value={this.state.valor_del_name}/>
+
+
+.............................................................
+
+PROBLEMA: el codigo en si tiene un problema porque cuando
+el input no tiene un valor esta en modo "NO CONTROLADO",
+haciendo que el valor se guarde en dos ubicaciones.
+
+ubicacion-A: el state
+ubicacion-B: el input
+
+SOLUCION: agregar el prop o atributo "VALUE" que permite
+que el input pase a estado "CONTROLADO".
+
+
+////////////////////
+
+
+**Levantamiento de estado:
+
+--es una tecnica de react que pone el 
+estado en una localizacion donde se le pueda
+pasar como props a otros componente.
+
+--el problema radica en que el estado
+se esta sobreescribiendo, 
+
+por ello lo correcto
+es que crees una const que guarde el estado,
+
+o hacer destructuring para dejar caer un nuevo array de datos
+
+
+--Problema-2: el otro inconveniente es que el estado local
+del formulario no esta siendo cargado por el del estado padre
+solo se muestra la informacion que se envia.
+
+La solucion es que enviamos como props el value de la informacion
+guardada en el estado que se levanto.
+
+
+NOTA>> LOS VALORES DEL FORMULARIO O DEL STATE QUE SE USE EN EL
+MOMENTO SE INICIALIZAN EN EL STATE PADRE
+
+
+
+////////////////////
+
+
+**Lista de componentes:
+
+--en esta nos enfocamos en crear un componente
+que enliste varios dentro de uno solo, mediante
+el levantamiento del estado en las aplicaciones.
+
+--el estado de la pagina Badge manipula de forma padre
+todos los JSON que poseen la informacion de los usuarios
+que ingresan a la conferencia.
+
+--el estado captura esos JSON y los envia al componente
+que los enlista uno a uno
+
+Uso del prop "Key":
+	es un prop que se encarga
+	de obtener y manipular el valor
+	de ID de la base de datos
+
+
+
 ////////////////////
 
 
 
 
 
+////////////////////
 
 
 
 
+////////////////////
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+INFORMACION: react-js hace referencia a reactivo,
+haciendo referencia a que cada cambio que ocurra
+renderizara todo el proyecto desde el padre.
 
 
 

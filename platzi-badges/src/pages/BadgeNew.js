@@ -17,6 +17,28 @@ import Badge from '../components/Badge';
 import BadgeForm from '../components/BadgeForm';
 
 export default class BadgeNew extends Component{
+
+    //inicializacion del estado
+    state = { form: {
+        firstName:'',
+        lastName:'',
+        email:'',
+        jobTitle:'',
+        twitter:''
+    } };
+    
+    handleChange = (e) => {
+        //dentro del this.setState llamar al objeto
+        //del state
+
+        this.setState({
+            form: {
+                ... this.state.form,
+                [e.target.name]: e.target.value,
+            }
+        });
+    }
+
     render(){
         
         return(
@@ -31,15 +53,19 @@ export default class BadgeNew extends Component{
                     <div className="row">
                         <div className="col">
                             <Badge 
-                                firstName="Daniel" 
-                                lastName="Cordova"
-                                Twitter="DcordovaDv"
-                                jobTitle="Asesor de Bienes Raices"
+                                firstName={this.state.form.firstName} 
+                                lastName={this.state.form.lastName}
+                                email={this.state.form.email}
+                                Twitter={this.state.form.twitter} 
+                                jobTitle={this.state.form.jobTitle} 
                             />
                         </div>
 
                         <div className="col-6">
-                            <BadgeForm />
+                            <BadgeForm 
+                                onChange={this.handleChange} 
+                                formValues={this.state.form}
+                            />
                         </div>
                     </div>
                 </div>
