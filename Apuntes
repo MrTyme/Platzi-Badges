@@ -422,13 +422,60 @@ Uso del prop "Key":
 ////////////////////
 
 
+**Introduccion a react-router:
 
+--las aplicaciones en react son 
+single-page-apps que con react-router
+que es una libreria OS nos ayudara a salir de
+ese modelo de paginas web multi-pages-app
+
+
+--en este caso solo usaremos 4 componentes
+de toda la lista que existe en los mismos
+
+BrowserRouter, Route, Switch, Link
+
+* BrowserRouter>> va hasta arriba de la app
+en el app.js, todo lo que este adentro, va 
+a funcionar como una SPA, lo que este fuera 
+de el simplemente no funcionara.
+
+
+* Route>> es una direccion de internet
+que tiene varios props, en donde los importantes
+son path(que da la ruta del componente para hacer render)
+y
+component(el componente que va a recibir), dicho componente
+va a recibir 3 props, match, history, location
+
+
+* Switch>> asi como en otros lenguajes
+es una opcion multiple donde escogeremos
+1 de cada N rutas establecidas.
+
+
+* Link>> escencial y elemental, quien toma
+el lugar del elemento ancla, al mismo
+tiempo va a recargar la pagina solo en las 
+secciones escogidas
 
 
 ////////////////////
 
 
+**Division de la aplicacion de rutas:
 
+
+////////////////////
+
+
+////////////////////
+
+
+////////////////////
+
+
+////////////////////
 
 ////////////////////
 
