@@ -4,17 +4,21 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 //components
 import BadgesNew from './pages/BadgeNew';
 import Badges from './pages/Badges';
-
+import Layout from './components/layout';
+import NotFound from './pages/NotFound';
 
 
 export default function App(){
     
     return (
         <BrowserRouter>
-            <Switch>
-                <Route exact path="/badges" component={Badges} />
-                <Route exact path="/badges/new" component={BadgesNew} />  
-            </Switch>
+            <Layout>
+                <Switch>
+                    <Route exact path="/badges" component={Badges} />
+                    <Route exact path="/badges/new" component={BadgesNew}/>
+                    <Route component={ NotFound }/>
+                </Switch>
+            </Layout>
         </BrowserRouter>
     
     );

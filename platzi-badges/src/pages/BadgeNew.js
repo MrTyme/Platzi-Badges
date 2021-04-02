@@ -3,8 +3,6 @@ import React, {Component} from 'react';
 //importacion de stilos
 import './styles/BadgeNew.css';
 
-//importacion del navbar
-import Navbar from '../components/navbar';
 
 //importacion de assets
 import header from '../assets/badge-header.svg';
@@ -42,9 +40,7 @@ export default class BadgeNew extends Component{
     render(){
         
         return(
-            <div>
-                <Navbar/> 
-                
+            <React.Fragment>   
                 <div className="BadgeNew__hero">
                     <img className="img-fluid" src={header} alt="Logo"/>
                 </div>
@@ -70,7 +66,7 @@ export default class BadgeNew extends Component{
                     </div>
                 </div>
 
-            </div>
+            </React.Fragment>
         );
 
     }
