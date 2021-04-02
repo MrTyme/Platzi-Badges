@@ -464,9 +464,36 @@ secciones escogidas
 
 
 **Division de la aplicacion de rutas:
+--
+
+
 
 
 ////////////////////
+
+
+**Uso de Layout:
+
+--Es en si una plantilla que permite
+que un componente se pueda ver en todas 
+nuestras paginas.
+
+para que layout funcione, debemos usar el 
+prop "children" con quien puedes heredar de manera general
+dentro de todo el router.
+
+.......................................
+
+*React.Fragment: es un componente 
+avanzado de react que ayuda a optimizar el codigo
+simplificando su lectura en el DOM del navegador.
+
+en otras palabras, como react debe renderizar un 
+solo elemento general dentro del return, el react.fragment
+reducira los elementos PADRE necesarios.
+
+--el mismo se establece como el objeto padre
+a renderizar para optimizar todo el codigo interno.
 
 
 ////////////////////
