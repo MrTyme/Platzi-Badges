@@ -346,7 +346,7 @@ de en que DIV se encuentre
 .............................................................
 
 3ero-) Lectura del estado
---se hace usando el prop value dentro de la etiqueta
+--se hace usando el prop "value" dentro de la etiqueta
 que manipule el state
 
 <input name="valor" value={this.state.valor_del_name}/>
@@ -355,7 +355,7 @@ que manipule el state
 .............................................................
 
 PROBLEMA: el codigo en si tiene un problema porque cuando
-el input no tiene un valor esta en modo "NO CONTROLADO",
+el input no tiene un valor, esta en modo "NO CONTROLADO",
 haciendo que el valor se guarde en dos ubicaciones.
 
 ubicacion-A: el state
@@ -499,13 +499,153 @@ a renderizar para optimizar todo el codigo interno.
 ////////////////////
 
 
-////////////////////
+**Ciclo de vida de un Componente:
+-- el componente tiene un ciclo
+de vida que va desde el montaje hasta el desmontaje
+
+1ero-) Montaje:
+--Representa el momento donde se
+inserta el codigo del componente en el DOM
+mediante tres procesos:
+	
+	1.1-)constructor:
+		perfecto lugar para iniciar
+		el estado y valores.
+	
+	1.2-)render:
+		es donde react calcula el 
+		elemento del componente.
+	
+	
+	1.3-)ComponentDidMount()
+		es donde el componente ya es visible en pantalla
+		
+	
+	
+2do-) Actualizacion:
+--Ocurre cuando los props o el estado 
+del componente cambian, llamando a dos
+metodo.
+
+	2.1-)render
+	
+	2.2-)ComponentDidUpdate()
+		--recibe dos argumentos, 
+		A-) los props anteriores
+		
+		B-) los states anteriores
+		
+		
+3ero-) Desmontaje:
+--Nos da la oportunidad de hacer limpieza de nuestro
+componente.
+
+	3.1-) se utiliza el componentWillUnmount()
+		--se encargara para limpiar memoria.
+		
+
+
 
 
 ////////////////////
 
+
+**Llamada a la API:
+
+--React se enfoca en patrones(formulas que se escriben una y otra vez),
+algo que ocurre siempre en el llamado a una API.
+
+--Posee 3 estados:
+
+1ero-) Loading: estado en donde la API
+envia una peticion y se espera a que aparezca
+
+2do-) Respuesta: despues de que la peticion
+se cargo, la API nos va a mostrar dos resultados
+dependiendo del estado de la informacion
+
+	2.1-) Error: Cuando la informacion
+	tuvo un percanse al desplazarce
+	
+	2.2-) Datos: cuando la informacion se
+	envia de manera correcta, pero dentro
+	de los datos existen dos sub-categorias.
+		
+		2.2.1-) Vacio: usualmente 
+		es el estado inicial de la app
+		en el momento en donde no se ingresan
+		datos algunos, Perfecto para enviar un mensaje.
+		
+		
+		2.2.2-) Con Datos: es cuando
+		la aplicacion ya fue cargada con X
+		informacion del usuario.
+	
+		
+--las llamadas a la api se realizan con el metodo
+"componentDidMount(){}" en donde adentro se realizara
+un fetch que obtendra los datos de la api.
+
+
+--las llamadas a la API son procesos ASINCRONOS
+
+
 ////////////////////
 
+
+**Solicitud de datos con GET:
+
+--la solicitud a una API siempre
+debe empezar por el componentDidMount(){}
+ya que asi entendemos que ya esta montado el componente
+y solo se debe cargar con la informacion correspondiente.
+
+--dentro de componentDidMount, usamos el fetch
+para hacer la solicitud, o Axios en caso de ya manejarlo.
+
+1ero-) declarar el estado inicial.
+
+2do-) realizar un try-catch para capturar el llamado a la API.
+
+3ero-) importar la api, dependiendo de en donde fue creada o como
+fuer creada.
+
+4to-) inicializar la carga de la data en el fetch
+
+////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////
+////////////////////
+////////////////////
+////////////////////
+////////////////////
 
 INFORMACION: react-js hace referencia a reactivo,
 haciendo referencia a que cada cambio que ocurra

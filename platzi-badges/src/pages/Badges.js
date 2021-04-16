@@ -7,54 +7,54 @@ import confLogo from '../assets/badge-header.svg';
 //componentes
 import BadgesList from '../components/BadgesList';
 import {Link} from 'react-router-dom';
+import PageLoading from '../components/PageLoading';
+import PageError from '../components/PageError';
 
+//import a la API
+import api from '../api';
 
 export default class Badges extends Component{
 
     //estado para la info de los usuarios
     state = {
-        data: [
-            {
-      "id": "2de30c42-9deb-40fc-a41f-05e62b5939a7",
-      "firstName": "Freda",
-      "lastName": "Grady",
-      "email": "Leann_Berge@gmail.com",
-      "jobTitle": "Legacy Brand Director",
-      "twitter": "FredaGrady22221-7573",
-      "avatarUrl": "https://www.gravatar.com/avatar/f63a9c45aca0e7e7de0782a6b1dff40b?d=identicon"
-    },
-    {
-      "id": "d00d3614-101a-44ca-b6c2-0be075aeed3d",
-      "firstName": "Major",
-      "lastName": "Rodriguez",
-      "email": "Ilene66@hotmail.com",
-      "jobTitle": "Human Research Architect",
-      "twitter": "MajorRodriguez61545",
-      "avatarUrl": "https://www.gravatar.com/avatar/d57a8be8cb9219609905da25d5f3e50a?d=identicon"
-    },
-    {
-      "id": "63c03386-33a2-4512-9ac1-354ad7bec5e9",
-      "firstName": "Daphney",
-      "lastName": "Torphy",
-      "email": "Ron61@hotmail.com",
-      "jobTitle": "National Markets Officer",
-      "twitter": "DaphneyTorphy96105",
-      "avatarUrl": "https://www.gravatar.com/avatar/e74e87d40e55b9ff9791c78892e55cb7?d=identicon"
-    },
-    {
-      "id": "a9748581-dfdc-4a78-930d-5205a2ccef48",
-      "firstName": "Tatyana",
-      "lastName": "Von",
-      "email": "Herminio.Schmeler@hotmail.com",
-      "jobTitle": "Central Branding Representative",
-      "twitter": "TatyanaVon35871-3686",
-      "avatarUrl": "https://www.gravatar.com/avatar/98c382edd93414c1649b9db866000f97?d=identicon"
-    },
-        ]
+        loading: true,
+        error: null,
+        data: undefined,
+    }
+
+    //llamado a la API
+    componentDidMount(){
+        this.fetchData();
+    }
+
+
+    //llamada al fetch
+    fetchData = async () => {
+        this.setState({ loading:true, error:null });
+    
+        try {
+            //recepcion de los datos
+            const data = await api.badges.list();
+
+            //guardar los datos en el estado
+            this.setState({ loading:false, data:data });
+
+        } catch (e) {
+            this.setState({ loading:false, error:e });          
+        }
     }
 
     
     render(){
+        
+        if (this.state.loading === true) {
+            return <PageLoading />
+        }
+
+        if (this.state.error === true) {
+            return <PageError error={this.state.error.message} />
+        }
+
         return(
             <React.Fragment>                                
                 <div className="Badges">
@@ -78,8 +78,7 @@ export default class Badges extends Component{
                     <div className="Badges__list">
                         <div className="Badges__container">
 
-                            <BadgesList badge={this.state.data} />            
-
+                            <BadgesList badges={this.state.data} />            
                         </div> 
                     </div>
                     

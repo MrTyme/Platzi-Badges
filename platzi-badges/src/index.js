@@ -8,9 +8,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './global.css';
 
 //componente
-import BadgeNew from './pages/BadgeNew';
-import Badges from './pages/Badges';
-
 import App from './App';
 
 const container = document.getElementById('app');
