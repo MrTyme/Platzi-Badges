@@ -615,10 +615,20 @@ fuer creada.
 ////////////////////
 
 
+--Peticion POST:
 
+--el cargar una informacion ingresada, se utiliza
+el metodo http POST que carga informacion que se inserto
+para que el servidor la consuma.
 
+todo se utiliza creando una funcion que se usa como
+prop del onSubmit.
 
-
+en este caso la aplicacion se llama handleSubmit,
+dentro de la misma funcion vamos a establecer una
+funcion asincrona que capture los datos ingresados y que
+finalizado dicho proceso, pasemos a realizar un history
+que nos envie de regreso a la lista de badges.
 
 
 

@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 
 //importacion de assets
 import ConfLogo from '../assets/badge-header.svg';
+import Gravatar from './gravatar';
 
 //importacion de estilos
 import './styles/Badge.css';
@@ -19,7 +20,10 @@ export default class Badge extends Component{
                 </div>
 
                 <div className="Badge__section-name">
-                    <img className="badge__avatar" src={this.props.Gravatar} alt="Avatar" />
+                    <Gravatar 
+                        className="badge__avatar" 
+                        email={this.props.email}
+                        alt="Avatar" />
                     
                     <h1>{ this.props.firstName } <br/>
                         { this.props.lastName } </h1>

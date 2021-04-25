@@ -20,9 +20,9 @@ export default class BadgeForm extends Component{
 
     
     //evento del save
-    handleClick(){
-        console.log('Button was Clicked');
-    }
+    //handleClick(){
+    //    console.log('Button was Clicked');
+    //}
 
     
     handleSubmit(e){
@@ -37,7 +37,7 @@ export default class BadgeForm extends Component{
             <div>
                 <h1>New Attendant </h1>
                 
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.props.onSubmit}>
                     <div className="form-group">
                         <label>First Name </label>
                         <input 
@@ -55,7 +55,7 @@ export default class BadgeForm extends Component{
                             onChange={this.props.onChange} 
                             className="form-control" 
                             type="text" 
-                            name="LastName" 
+                            name="lastName" 
                             value={this.props.formValues.lastName}/>
                     </div>
             
@@ -96,7 +96,12 @@ export default class BadgeForm extends Component{
                         onClick={this.handleClick} 
                         className="btn btn-primary"> Save 
                     </button>
-
+                    
+                    {this.props.error && 
+                        <p className="text-danger">
+                            {this.props.error.message}
+                        </p>
+                    }
                 </form>
             </div>
         );
