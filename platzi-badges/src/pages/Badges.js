@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 
 //styles
 import './styles/Badges.css';
@@ -6,7 +7,6 @@ import confLogo from '../assets/badge-header.svg';
 
 //componentes
 import BadgesList from '../components/BadgesList';
-import {Link} from 'react-router-dom';
 import PageLoading from '../components/PageLoading';
 import PageError from '../components/PageError';
 

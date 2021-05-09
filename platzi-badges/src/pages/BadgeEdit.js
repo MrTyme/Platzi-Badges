@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
-//importacion de stilos
-import './styles/BadgeNew.css';
 
+//importacion de stilos
+import './styles/BadgeEdit.css';
 
 //importacion de assets
 import header from '../assets/platziconf-logo.svg';
@@ -19,11 +19,11 @@ import BadgeForm from '../components/BadgeForm';
 import api from '../api';
 
 
-export default class BadgeNew extends Component{
+export default class BadgeEdit extends Component{
 
     //inicializacion del estado
     state = { 
-        loading: false,
+        loading: true,
         error: null,
         form: {
             firstName:'',
@@ -31,8 +31,33 @@ export default class BadgeNew extends Component{
             email:'',
             jobTitle:'',
             twitter:''
-    } };
+        }, 
+    };
     
+
+    
+    //peticion PUT al servidor
+    componentDidMount(){
+        this.fetchData();
+    }
+    
+    //carga de la peticion
+    fetchData = async e => {
+        this.setState({ loading: true, error: null });
+
+        try {
+            console.log(this.props.match.params.badgeId)
+            const data = await api.badges.read(this.props.match.params.badgeId);
+
+            this.setState({ loading: false, form: data });
+
+        } catch (error) {
+            this.setState({ loading: false, error: error });
+        }
+    }
+    
+
+
     handleChange = (e) => {
         //dentro del this.setState llamar al objeto
         //del state
@@ -45,7 +70,7 @@ export default class BadgeNew extends Component{
         });
     }
 
-    //evento POST
+    //evento PUT
     handleSubmit = async e => {
         e.preventDefault();
         
@@ -53,7 +78,7 @@ export default class BadgeNew extends Component{
         
        
         try {
-            await api.badges.create(this.state.form);
+            await api.badges.update(this.props.match.params.badgeId, this.state.form);
             
             this.setState({ loading:false})
             
@@ -75,8 +100,8 @@ export default class BadgeNew extends Component{
         
         return(
             <React.Fragment>   
-                <div className="BadgeNew__hero">
-                    <img className="BadgeNew__hero-image img-fluid" 
+                <div className="BadgeEdit__hero">
+                    <img className="BadgeEdit__hero-image img-fluid" 
                          src={header} 
                          alt="Logo"/>
                 </div>
@@ -94,7 +119,7 @@ export default class BadgeNew extends Component{
                         </div>
 
                         <div className="col-6">
-                            <h1>New Attendant </h1>
+                            <h1>Edit Attendant </h1>
                             <BadgeForm 
                                 onChange={this.handleChange}
                                 onSubmit={this.handleSubmit}
