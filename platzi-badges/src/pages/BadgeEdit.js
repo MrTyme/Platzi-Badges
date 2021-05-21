@@ -21,24 +21,35 @@ import api from '../api';
 
 export default class BadgeEdit extends Component{
 
+    constructor(props){
+        super(props);
+        
+        this.componentDidMount = this.componentDidMount.bind(this)
+
+        this.state = { 
+            loading: true,
+            error: null,
+            form: {
+                firstName:'',
+                lastName:'',
+                email:'',
+                jobTitle:'',
+                twitter:''
+            }, 
+        };
+
+    }
+
     //inicializacion del estado
-    state = { 
-        loading: true,
-        error: null,
-        form: {
-            firstName:'',
-            lastName:'',
-            email:'',
-            jobTitle:'',
-            twitter:''
-        }, 
-    };
+    
     
 
     
     //peticion PUT al servidor
     componentDidMount(){
         this.fetchData();
+
+        setInterval(this.fetchData, 5000);
     }
     
     //carga de la peticion
