@@ -631,27 +631,27 @@ finalizado dicho proceso, pasemos a realizar un history
 que nos envie de regreso a la lista de badges.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ////////////////////
+
+
+**Peticion PUT:
+
+-Dicha peticion es la que se encarga de enviar
+la informacion que se modifique para el usuario.
+
+
+
+**Actualizacion Automatica:
+
+-Polling:
+consiste en que cada determinado tiempo que define
+el desarrollador se busquen los datos y actualicen
+automaticamente, hasta que el usuario se vaya de la pagina.
+
+-en si es un intervalo que se debe establecer.
+
+
+
 ////////////////////
 ////////////////////
 ////////////////////
